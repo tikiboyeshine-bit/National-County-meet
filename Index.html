@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>National County Meet – Group Standings</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;background:#48c4fd09;margin:0;padding:15px}
+    h1,h2,h3{text-align:center;color:#0b5d1e}
+    .tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+    .tab{padding:10px 15px;border-radius:6px;background:#0b5d1e;color:#fff;cursor:pointer;font-size:14px}
+    .tab.active{background:#145a32}
+    .view{display:none}
+    .view.active{display:block}
+    .group{margin:20px auto;max-width:980px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);padding:15px}
+    table{width:100%;border-collapse:collapse}
+    thead{background:#0b5d1e;color:#fff}
+    th,td{padding:8px;text-align:center;border-bottom:1px solid #ddd;font-size:13px}
+    th:first-child,td:first-child{text-align:left}
+    .qualified{background:#d4edda!important;font-weight:bold}
+    .disqualify{background:red}
+    .team{display:flex;align-items:center;gap:8px}
+    .team img{width:22px;height:22px;object-fit:contain}
+
+    footer{text-align:center;margin-top:30px;font-size:12px;color:#555}
+    /* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+@media (max-width: 768px) {
+
+  body {
+    padding: 8px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 15px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  .tabs {
+    gap: 6px;
+  }
+
+  .tab {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .group {
+    padding: 10px;
+    margin: 15px auto;
+  }
+
+  /* Make tables scrollable horizontally */
+  .group table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th, td {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  /* Team column styling */
+  .team {
+    gap: 6px;
+  }
+
+  .team img {
+    width: 18px;
+    height: 18px;
+  }
+
+  footer {
+    font-size: 11px;
+    padding-bottom: 10px;
+  }
+}
+
+/* =========================
+   EXTRA SMALL DEVICES
+========================= */
+@media (max-width: 480px) {
+
+  h1 {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 14px;
+  }
+
+  th, td {
+    font-size: 11px;
+  }
+
+  .team img {
+    width: 16px;
+    height: 16px;
+  }
+}
+  </style>
+</head>
+<body>
+
+<h1>National Counties Sports Meet</h1>
+<h2>Football Competition</h2>
+
+<div class="tabs">
+  <div class="tab active" onclick="showView('standings')">Standings</div>
+</div>
+
+<!-- STANDINGS VIEW -->
+<div id="standings" class="view active">
+
+<div class="group">
+<h3>Group A</h3>
+<table>
+<thead><tr><th>County</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr></thead>
+<tbody id="groupA">
+<tr class="qualified"><td class="team"><img src="gee.webp">Rivergee County</td><td>1</td><td>1</td><td>0</td><td>0</td><td>2</td><td>3</td></tr>
+<tr><td class="team"><img src="kru.webp">Grand Kru</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td class="team"><img src="mary land.webp">Mary Land County</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td class="team"><img src="rivercess.jpg">River Cess</td><td>1</td><td>0</td><td>0</td><td>1</td><td>-2</td><td>0</td></tr>
+</tbody>
+</table>
+</div>
+<!-- GROUP B -->
+<div class="group">
+<h3>Group B</h3>
+<table>
+<thead>
+<tr><th>County</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr>
+</thead>
+<tbody id="groupB">
+<tr class="qualified">
+<tr>
+    <tr class="qualified">
+  <td class="team"><img src="nimba county.webp">Nimba County</td>
+  <td>1</td><td>1</td><td>0</td><td>0</td><td>3</td><td>3</td>
+</tr>
+<tr class="qualified">
+  <td class="team"><img src="margibi.webp">Margibi County</td>
+  <td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>3</td>
+</tr>
+  <td class="team"><img src="bomi.webp">Bomi County</td>
+  <td>1</td><td>0</td><td>0</td><td>1</td><td>-1</td><td>0</td>
+</tr>
+<tr>
+  <td class="team"><img src="sinoe.webp">Sinoe County</td>
+  <td>1</td><td>0</td><td>0</td><td>1</td><td>-3</td><td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!-- GROUP C -->
+<div class="group">
+<h3>Group C</h3>
+<table>
+<thead>
+<tr><th>County</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr>
+</thead>
+<tbody id="groupC">
+<tr class="qualified">
+  <td class="team"><img src="lofa.webp">Lofa</td>
+  <td>1</td><td>1</td><td>0</td><td>0</td><td>+2</td><td>3</td>
+<tr class="qualified">
+   <td class="team"><img src="capemount.webp">Cape Mount</td>
+  <td>1</td><td>1</td><td>0</td><td>0</td><td>+1</td><td>3</td>
+</tr>
+</tr>
+  <td class="team"><img src="gedeh.webp">Grand Gedeh</td>
+  <td>1</td><td>0</td><td>0</td><td>1</td><td>-1</td><td>0</td>
+</tr>
+<tr>
+  <td class="team"><img src="bassa.webp">Grandbassa County</td>
+  <td>1</td><td>0</td><td>0</td><td>1</td><td>-2</td><td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!-- GROUP D -->
+<div class="group">
+<h3>Group D</h3>
+<table>
+<thead>
+<tr><th>County</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr>
+</thead>
+<tbody id="groupD">
+<tr>
+<tr class="qualified">
+  <td class="team"><img src="gbapo.webp">Gbarpolu</td>
+  <td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td>
+</tr>
+<tr class="qualified">
+  <td class="team"><img src="Montserrado.jpg">Montserrado County</td>
+  <td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td>
+</tr>
+  <td class="team"><img src="bong.webp">Bong County</td>
+  <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+<footer>© National County Sports Meet – Liberia 2025. Built By Shine Media</footer>
+
+<script>
+function showView(viewId, event){
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.getElementById(viewId).classList.add('active');
+
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  if(event) event.currentTarget.classList.add('active');
+
+  // Sync TV after switching view
+  syncTV();
+}
+
+
+// Automatically mark top 2 teams as qualified
+function autoUpdateQualification(groupId) {
+  const rows = Array.from(document.querySelectorAll(`#${groupId} tr`));
+
+  rows.sort((a,b) => {
+    const ptsA = parseInt(a.children[6].innerText);
+    const ptsB = parseInt(b.children[6].innerText);
+    if(ptsB !== ptsA) return ptsB - ptsA;
+    const gdA = parseInt(a.children[5].innerText);
+    const gdB = parseInt(b.children[5].innerText);
+    return gdB - gdA;
+  });
+
+  // Remove previous qualified classes
+  rows.forEach(r => r.classList.remove('qualified'));
+
+  // Top 2 are qualified
+  rows.slice(0,2).forEach(r => r.classList.add('qualified'));
+
+  // Reorder rows in the table
+  const tbody = document.getElementById(groupId);
+  rows.forEach(r => tbody.appendChild(r));
+}
+
+// TV sync for Group A
+function syncTV() {
+  const tv = document.getElementById('tvA');
+  tv.innerHTML = '';
+  document.querySelectorAll('#groupA tr').forEach(r => {
+    const c = r.children;
+    tv.innerHTML += `<tr><td>${c[0].innerText}</td><td>${c[1].innerText}</td><td>${c[5].innerText}</td><td>${c[6].innerText}</td></tr>`;
+  });
+}
+
+// Add click handlers to tabs correctly
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', e => {
+    showView(tab.getAttribute('onclick').split("'")[1], e);
+  });
+});
+</script>
